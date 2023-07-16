@@ -33,3 +33,18 @@ INSERT INTO tb_section (title, description, position, img_url, resource_id, prer
 
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, '2023-07-15T12:34:56Z', null, true, false);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 2, '2023-07-18T17:34:56Z', null, true, false);
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('aula 1 do cap 1', 1, 1);
+INSERT INTO tb_content (id, text_content, video_url) VALUES (1, 'marial de apoio', 'yotube.com/videozin');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('aula 2 do cap 1', 1, 1);
+INSERT INTO tb_content (id, text_content, video_url) VALUES (2, 'marial de apoio', 'yotube.com/videozin');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('aula 3 do cap 1', 1, 1);
+INSERT INTO tb_content (id, text_content, video_url) VALUES (3, 'marial de apoio', 'yotube.com/videozin');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('aula 3 do cap 1', 1, 1);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (4, 'task', 5, 4, 1.0, '2022-07-15T12:34:56Z');
+
+INSERT INTO tb_lesson_done (lesson_id, user_id, offer_id) VALUES (1,1,1);
+INSERT INTO tb_lesson_done (lesson_id, user_id, offer_id) VALUES (2,1,1);
