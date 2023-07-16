@@ -26,3 +26,7 @@ INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.5
 INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) VALUES ('trilha Html', 'trilha do curso', 1, 'imgtrilhhtml.com', 1, 1);
 INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) VALUES ('forum', 'tira duvidas do curso', 2, 'imgtrilhhtml.com', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) VALUES ('lives', 'lives do curso', 3, 'imgtrilhhtml.com', 0, 1);
+
+INSERT INTO tb_section (title, description, position, img_url, resource_id, prerequisite_id) VALUES ('chapter one', 'aulas e aulas', 1, 'imgurlhtml.com', 1, null);
+INSERT INTO tb_section (title, description, position, img_url, resource_id, prerequisite_id) VALUES ('chapter two', 'aulas e mais aulas', 2, 'imgurlhtml.com', 2, 1);
+INSERT INTO tb_section (title, description, position, img_url, resource_id, prerequisite_id) VALUES ('chapter three', 'aulas e mais um pouco de aulas', 3, 'imgurlhtml.com', 2, 1);

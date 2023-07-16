@@ -1,16 +1,12 @@
 package com.waly.walyLearn.entities;
 
-import com.waly.walyLearn.entities.enums.ResourceType;
 import jakarta.persistence.*;
-import org.hibernate.query.sql.internal.ParameterRecognizerImpl;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_resource")
-public class Resource {
+@Table(name = "tb_section")
+public class Section {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,25 +15,25 @@ public class Resource {
     private String description;
     private Integer position;
     private String imgUrl;
-    private ResourceType type;
 
     @ManyToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;
+    @JoinColumn(name = "resource_id")
+    private Resource resource;
 
-    @OneToMany(mappedBy = "resource")
-    private List<Section> sections = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "prerequisite_id")
+    private Section prerequisite;
 
-    public Resource(){}
+    public Section(){}
 
-    public Resource(Long id, String title, String description, Integer position, String imgUrl, ResourceType type, Offer offer) {
+    public Section(Long id, String title, String desccription, Integer position, String imgUrl, Resource resource, Section prerequisite) {
         this.id = id;
         this.title = title;
-        this.description = description;
+        this.description = desccription;
         this.position = position;
         this.imgUrl = imgUrl;
-        this.type = type;
-        this.offer = offer;
+        this.resource = resource;
+        this.prerequisite = prerequisite;
     }
 
     public Long getId() {
@@ -56,12 +52,12 @@ public class Resource {
         this.title = title;
     }
 
-    public String getDescription() {
+    public String getDesccription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDesccription(String desccription) {
+        this.description = desccription;
     }
 
     public Integer getPosition() {
@@ -80,20 +76,20 @@ public class Resource {
         this.imgUrl = imgUrl;
     }
 
-    public ResourceType getType() {
-        return type;
+    public Resource getResource() {
+        return resource;
     }
 
-    public void setType(ResourceType type) {
-        this.type = type;
+    public void setResource(Resource resource) {
+        this.resource = resource;
     }
 
-    public Offer getOffer() {
-        return offer;
+    public Section getPrerequisite() {
+        return prerequisite;
     }
 
-    public void setOffer(Offer offer) {
-        this.offer = offer;
+    public void setPrerequisite(Section prerequisite) {
+        this.prerequisite = prerequisite;
     }
 
     @Override
@@ -101,9 +97,9 @@ public class Resource {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Resource resource = (Resource) o;
+        Section section = (Section) o;
 
-        return Objects.equals(id, resource.id);
+        return Objects.equals(id, section.id);
     }
 
     @Override
