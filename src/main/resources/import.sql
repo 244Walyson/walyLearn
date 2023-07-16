@@ -30,3 +30,6 @@ INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) 
 INSERT INTO tb_section (title, description, position, img_url, resource_id, prerequisite_id) VALUES ('chapter one', 'aulas e aulas', 1, 'imgurlhtml.com', 1, null);
 INSERT INTO tb_section (title, description, position, img_url, resource_id, prerequisite_id) VALUES ('chapter two', 'aulas e mais aulas', 2, 'imgurlhtml.com', 2, 1);
 INSERT INTO tb_section (title, description, position, img_url, resource_id, prerequisite_id) VALUES ('chapter three', 'aulas e mais um pouco de aulas', 3, 'imgurlhtml.com', 2, 1);
+
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, '2023-07-15T12:34:56Z', null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 2, '2023-07-18T17:34:56Z', null, true, false);
