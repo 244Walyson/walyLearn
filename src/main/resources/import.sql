@@ -22,3 +22,7 @@ INSERT INTO tb_notification(text, route, user_id, read, moment) VALUES ('notific
 
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', '2023-07-15T12:34:56Z', '2024-07-15T12:34:56Z', 1);
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.5', '2022-07-15T12:34:56Z', '2023-07-15T12:34:56Z', 2);
+
+INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) VALUES ('trilha Html', 'trilha do curso', 1, 'imgtrilhhtml.com', 1, 1);
+INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) VALUES ('forum', 'tira duvidas do curso', 2, 'imgtrilhhtml.com', 2, 1);
+INSERT INTO tb_resource (title, description, position, img_url, type, offer_id) VALUES ('lives', 'lives do curso', 3, 'imgtrilhhtml.com', 0, 1);
