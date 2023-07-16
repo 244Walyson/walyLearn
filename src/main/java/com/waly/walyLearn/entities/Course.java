@@ -1,8 +1,8 @@
 package com.waly.walyLearn.entities;
 
 import jakarta.persistence.*;
-import java.util.Objects;
-import java.util.Set;
+
+import java.util.*;
 
 @Entity
 @Table(name = "tb_course")
@@ -15,6 +15,8 @@ public class Course {
     private String imgUrl;
     private String imgGrayUrl;
 
+    @OneToMany(mappedBy = "course")
+    private List<Offer> offers = new ArrayList<>();
     public Course(){}
 
     public Course(Long id, String name, String imgUrl, String imgGrayUrl) {
@@ -54,6 +56,10 @@ public class Course {
 
     public void setImgGrayUrl(String imgGrayUrl) {
         this.imgGrayUrl = imgGrayUrl;
+    }
+
+    public List<Offer> getOffers() {
+        return offers;
     }
 
     @Override

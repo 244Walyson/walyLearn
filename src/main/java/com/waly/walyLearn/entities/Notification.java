@@ -17,14 +17,19 @@ public class Notification {
     private Boolean read;
     private String route;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Notification(){}
 
-    public Notification(Long id, String text, Instant moment, String route) {
+    public Notification(Long id, String text, Instant moment, Boolean read, String route, User user) {
         this.id = id;
         this.text = text;
         this.moment = moment;
-        this.read = false;
+        this.read = read;
         this.route = route;
+        this.user = user;
     }
 
     public Long getId() {
@@ -65,6 +70,14 @@ public class Notification {
 
     public void setRoute(String route) {
         this.route = route;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

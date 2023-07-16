@@ -17,3 +17,8 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (3,3);
 
 INSERT INTO tb_course (name, img_url, img_gray_url) VALUES ('bootcamp html', 'imghtml.com', 'imggrayhtml.com')
 INSERT INTO tb_course (name, img_url, img_gray_url) VALUES ('bootcamp flutter', 'imghtml.com', 'imggrayhtml.com')
+
+INSERT INTO tb_notification(text, route, user_id, read, moment) VALUES ('notification test', 'user alex', 1, true, '2023-07-15T12:34:56Z');
+
+INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', '2023-07-15T12:34:56Z', '2024-07-15T12:34:56Z', 1);
+INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.5', '2022-07-15T12:34:56Z', '2023-07-15T12:34:56Z', 2);
